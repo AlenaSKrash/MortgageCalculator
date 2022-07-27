@@ -21,7 +21,8 @@ public class Main {
         int period = scanner.nextInt();
         int numberOfPayments = period * MONTHS_IN_YEAR;
 
-        double mortgagePayments = principal*(monthlyInterest*Math.pow(1+monthlyInterest,numberOfPayments)/(Math.pow(1+monthlyInterest,numberOfPayments)-1));
+        double mortgagePayments = Math.pow(1 + monthlyInterest,numberOfPayments) / (Math.pow(1 + monthlyInterest,numberOfPayments) - 1);
+
 
         NumberFormat nf = NumberFormat.getCurrencyInstance();
         String mortgagePaymentsFormatted = nf.format(principal);
